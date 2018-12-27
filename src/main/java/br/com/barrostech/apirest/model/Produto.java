@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="tb_produto")
@@ -19,10 +20,13 @@ public class Produto implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@NotNull
 	private String nome;
 	
+	@NotNull
 	private BigDecimal quantidade;
 	
+	@NotNull
 	private BigDecimal valor;
 
 	public Long getId() {
